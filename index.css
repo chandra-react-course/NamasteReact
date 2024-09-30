@@ -1,24 +1,79 @@
-#heading{
-color: red;
+.app{
+  background-color: aliceblue;
 }
-.input-group {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
-    width: 50%;
-  }
-  .submit-btn {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border: 1px solid #e34728;
-    background: #fff;
-    margin: 1.2rem 0;
-    color: #e34728;
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .imgTag{
-    width: 300px;
-    height: 300px;
-  }
+.header-main{
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 2px;
+}
+.logo-img{
+  height: 100px;
+  width: 100px;
+}
+.nav-item-ul{
+  display: flex;
+  list-style: none;
+}
+
+.nav-item-ul li{
+  padding: 10px;
+  font-size: 22px;
+}
+.nav-item-root{
+  position: absolute;
+  right: 5%;
+  top: 4%;
+}
+.body-main{
+  margin-left: 70px;
+}
+.search{
+  padding: 10px;
+}
+.cart-img{
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+}
+.res-cart{
+  background-color: #f5f5dc78;
+  width: 200px;
+  padding: 3px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.res-cart:hover{
+  border: 1px solid red;
+}
+.res-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-main{
+  border: 1px solid gray;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.copy-right{
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.header{
+  position: absolute;
+  left: 38%;
+  top: 4%
+}
+.header-heading{
+  font-size: 60px;
+  color: blue;
+}
+.rate-cost-for-members{
+  display: flex;
+  justify-content: space-between;
+}
+
+h4{
+ color: #808080;
+}
