@@ -42,6 +42,7 @@
   padding: 3px;
   margin: 10px;
   border-radius: 10px;
+  cursor: pointer;
 }
 .res-cart:hover{
   border: 1px solid red;
@@ -76,4 +77,7 @@
 
 h4{
  color: #808080;
+}
+.rated-btn{
+  cursor: pointer;
 }
