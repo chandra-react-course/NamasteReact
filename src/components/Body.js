@@ -2,6 +2,7 @@ import ResCart from "./ResCart"
 import { useEffect, useState } from "react";
 import {SWIGGY_API} from "../constants/const";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     
@@ -20,7 +21,6 @@ useEffect(() => {
     );
 
     const json = await data.json();
-
     // Optional Chaining
     setListOfRes(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -32,7 +32,6 @@ useEffect(() => {
    
   };
 
-  
     return listOfRes.length === 0 ? <Shimmer/> : (
         <div className="body-main">
             <div className="search">
@@ -50,7 +49,7 @@ useEffect(() => {
             </div>
             <div className="res-container">
                 {filterdList.map((restuarant) =>  (
-                    <ResCart key={restuarant.info.id} resData = {restuarant}/> 
+                    <Link to={"/restuarants/"+restuarant.info.id} key={restuarant.info.id}><ResCart  resData = {restuarant}/></Link>
                 ))}
            </div>
         </div>

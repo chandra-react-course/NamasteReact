@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {APP_LOGO} from "../constants/const";
+import { Link } from "react-router-dom";
+
 const Header = () =>{
    const [loginBtn, setLoginBtn] = useState("Login");
+   useEffect(() => {
+}, [loginBtn]);
     return(
         <div className="header-main">
             <div className="logo">
@@ -12,9 +16,9 @@ const Header = () =>{
             </div>
             <div className="nav-item-root">
                 <ul className="nav-item-ul">
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
+                    <li><Link to={"/"}>Home</Link></li>
+                    <li><Link to={"/about"}>About</Link></li>
+                    <li><Link to={"/contact"}>Contact</Link></li>
                     <li>Cart</li>
                     <button className="login" onClick={() =>{
                       loginBtn === "Login" ? setLoginBtn("Logout") :setLoginBtn("Login");
