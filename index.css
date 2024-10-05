@@ -104,3 +104,7 @@ h4{
     margin-top: 8px;
     margin-left: 5px;
 }
+.user-menu{
+  padding: 10px;
+  border: 1px solid gray;
+}
