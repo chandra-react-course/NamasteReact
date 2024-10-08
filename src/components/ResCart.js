@@ -1,9 +1,9 @@
 import {CART_IMAGE} from "../constants/const";
 const ResCart = (props) =>{
     return(
-        <div className="res-cart">
-            <img className="cart-img" src={CART_IMAGE+props.resData.info.cloudinaryImageId} alt=""></img>
-            <h3>{props.resData.info.name}</h3>
+        <div className="w-52 p-4 m-4 border border-gray-500 rounded-lg bg-gray-100 hover:bg-gray-200">
+            <img className="rounded-md" src={CART_IMAGE+props.resData.info.cloudinaryImageId} alt=""></img>
+            <h3 className ="font-bold my-4 text-lg">{props.resData.info.name}</h3>
             <h4>{props.resData.info.cuisines.join(", ")}</h4> 
             <div className="rate-cost-for-members">
                 <h5>{props.resData.info.avgRating+" Rating"}</h5>

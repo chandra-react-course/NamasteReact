@@ -10,7 +10,7 @@ class About extends Component {
     };
     render(){
         return (
-            <div className="about-main">
+            <div className="p-4">
                 <h1>About</h1>
                 <h2>This is Food Delivery Web Application... </h2>
                 <UserClass name ={"second: sekhar"}/>

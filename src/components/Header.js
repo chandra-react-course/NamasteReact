@@ -9,22 +9,22 @@ const Header = () =>{
    useEffect(() => {
 }, [loginBtn]);
     return(
-        <div className="header-main">
-            <div className="logo">
-                <img className="logo-img" src={APP_LOGO} alt="FoodDelivery"></img>
+        <div className="flex justify-between bg-purple-100 shadow-md">
+            <div className="w-28">
+                <img className="bg-yellow-50" src={APP_LOGO} alt="FoodDelivery"></img>
             </div>
-            <div className="header">
-                <span className="header-heading">Food Delivery</span>
+            <div className="flex items-center">
+                <span className="text-5xl text-blue-900">Food Delivery</span>
             </div>
-            <div className="nav-item-root">
-                <ul className="nav-item-ul">
-                    <li>Online Status: {onlineStatus === true ? "✅" : "🔴"}</li>
-                    <li><Link to={"/"}>Home</Link></li>
-                    <li><Link to={"/about"}>About</Link></li>
-                    <li><Link to={"/contact"}>Contact</Link></li>
-                    <li><Link to={"/grocery"}>Grocery</Link></li>
-                    <li>Cart</li>
-                    <button className="login" onClick={() =>{
+            <div className="flex items-center">
+                <ul className="flex p-4 m-2">
+                    <li className="px-4">Online Status: {onlineStatus === true ? "✅" : "🔴"}</li>
+                    <li className="px-4"><Link to={"/"}>Home</Link></li>
+                    <li className="px-4"><Link to={"/about"}>About</Link></li>
+                    <li className="px-4"><Link to={"/contact"}>Contact</Link></li>
+                    <li className="px-4"><Link to={"/grocery"}>Grocery</Link></li>
+                    <li className="px-4">Cart</li>
+                    <button className="px-4" onClick={() =>{
                       loginBtn === "Login" ? setLoginBtn("Logout") :setLoginBtn("Login");
                     }}>{loginBtn}</button>
                 </ul>
