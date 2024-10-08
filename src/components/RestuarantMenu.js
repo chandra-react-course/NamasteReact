@@ -12,9 +12,9 @@ const RestuarantMenu = () => {
      const {name,cuisines,cloudinaryImageId,costForTwoMessage} = resMenuList?.cards[2]?.card?.card?.info;
      const itemCardList = resMenuList?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
     return(
-       <div className="menu-items">
+       <div className="p-4">
         <ul>
-            <h2>{name}</h2>
+            <h2 className="font-bold text-3xl my-6">{name}</h2>
             {cuisines.join(", ")}
             {costForTwoMessage}
             <h2>Menu</h2>

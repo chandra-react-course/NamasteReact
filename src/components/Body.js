@@ -39,21 +39,21 @@ useEffect(() => {
   }
   
     return listOfRes.length === 0 ? <Shimmer/> : (
-        <div className="body-main">
-            <div className="search">
-                <input type="text" className="search-input" value={searchInput} onChange={(e) =>{
+        <div className="bg-green-50">
+            <div className="flex p-4">
+                <input type="text" className="m-4  my-4 border border-solid border-black" value={searchInput} onChange={(e) =>{
                     setSearchInput(e.target.value);
                 }}/>
-                <button className="input-btn" onClick={()=>{
+                <button className="m-4 my-4 bg-blue-200 w-20" onClick={()=>{
                    const searchfilterList = listOfRes.filter((res)=>res.info.name.toLowerCase().includes(searchInput));
                    setFilterdList(searchfilterList);
                 }}>Search</button>
-                <button className="rated-btn" onClick={() =>{
+                <button className="m-4 my-4 bg-blue-200 w-44" onClick={() =>{
                     const avgFiltered = listOfRes.filter((res) => res.info.avgRating > 4.2);
                     setFilterdList(avgFiltered);
                 }}>Top Rated Restuarant</button>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {filterdList.map((restuarant) =>  (
                     <Link to={"/restuarants/"+restuarant.info.id} key={restuarant.info.id}><ResCart  resData = {restuarant}/></Link>
                 ))}
