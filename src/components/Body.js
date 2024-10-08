@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {SWIGGY_API} from "../constants/const";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     
@@ -32,6 +33,11 @@ useEffect(() => {
    
   };
 
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus === false){
+    return(<h1>Look likes you are internet connection lost</h1>);
+  }
+  
     return listOfRes.length === 0 ? <Shimmer/> : (
         <div className="body-main">
             <div className="search">
