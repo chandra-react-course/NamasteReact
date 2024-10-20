@@ -13,4 +13,15 @@ const ResCart = (props) =>{
     );
 };
 
+export const withIsOpenLabel = (ResCart) =>{
+    return(props) => {
+        return(
+            <div>
+                <label className="absolute bg-black text-white mx-4 rounded-md">Open</label>
+                <ResCart {...props}/>
+            </div>
+        );
+    };
+};
+
 export default ResCart;

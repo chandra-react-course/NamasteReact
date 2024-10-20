@@ -1,13 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import {APP_LOGO} from "../constants/const";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const Header = () =>{
    const [loginBtn, setLoginBtn] = useState("Login");
    const onlineStatus = useOnlineStatus();
+   const userContext = useContext(UserContext);
+
    useEffect(() => {
-}, [loginBtn]);
+    }, [loginBtn]);
     return(
         <div className="flex justify-between bg-purple-100 shadow-md">
             <div className="w-28">
@@ -27,6 +30,7 @@ const Header = () =>{
                     <button className="px-4" onClick={() =>{
                       loginBtn === "Login" ? setLoginBtn("Logout") :setLoginBtn("Login");
                     }}>{loginBtn}</button>
+                    <li className="px-4">{userContext.lognedInUser}</li>
                 </ul>
             </div>
         </div>
