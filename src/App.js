@@ -8,11 +8,15 @@ import RestuarantMenu from "./components/RestuarantMenu"
 
 import About from "./components/About.js";
 import Contact from "./components/Contact.js";
+import Cart from "./components/Cart.js";
 //import Grocery from "./components/Grocery.js";
 import Error from "./components/Error.js";
 import UserContext from "./utils/userContext.js";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
+import Cart from "./components/Cart.js";
 
 const Grocery = lazy(() =>import("./components/Grocery.js"));
 
@@ -27,12 +31,14 @@ const FoodDelivery = () => {
    const [userName, setUserName] = useState();
     return(
        <div className="app">
+         <Provider store={appStore}>
          <UserContext.Provider value={{lognedInUser : userName, setUserName}}>
             <Header/>
             {/* <Body/> */}
             <Outlet/>
             <Footer/>
           </UserContext.Provider>
+          </Provider>
        </div>
     );
 };
@@ -62,6 +68,10 @@ const appRouter =  createBrowserRouter([
          {
             path:"/grocery",
             element : <Suspense fallback = {<h1>Loading...</h1>}><Grocery/></Suspense>,
+         },
+         {
+            path:"/cart",
+            element : <Suspense fallback = {<h1>Loading...</h1>}><Cart/></Suspense>,
          },
          {
             path:"/restuarants/:resId",
